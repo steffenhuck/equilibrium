@@ -10,6 +10,7 @@
   --signature: #887f78;
   --max-width: 860px;
   --body-width: 760px;
+  --speech-indent: 2.7rem;
 }
 
 * {
@@ -117,23 +118,35 @@ h1 {
 }
 
 .stage-direction {
-  margin: 0 0 1.45em;
+  margin: 0 0 1.2em 0;
   color: var(--stage);
   font-style: italic;
 }
 
 .stage-direction.tight {
-  margin-top: -0.75em;
-  margin-bottom: 0.6em;
+  margin-top: -0.05em;
+  margin-bottom: 0.9em;
+}
+
+.stage-direction.indented {
+  margin-left: var(--speech-indent);
 }
 
 .speech {
-  margin: 0 0 1.08em;
+  margin: 0;
+}
+
+.speaker-line {
+  margin-bottom: 0.08em;
+}
+
+.spoken-line {
+  margin: 0 0 1.15em var(--speech-indent);
+  color: var(--text);
 }
 
 .speaker {
-  display: inline-block;
-  margin-right: 0.28em;
+  display: block;
   font-variant: small-caps;
   letter-spacing: 0.06em;
   font-weight: 700;
@@ -160,6 +173,10 @@ h1 {
 }
 
 @media (max-width: 700px) {
+  :root {
+    --speech-indent: 1.75rem;
+  }
+
   .page {
     padding: 72px 18px 56px;
   }
@@ -202,16 +219,19 @@ h1 {
   }
 
   .stage-direction {
-    margin-bottom: 1.28em;
-  }
-
-  .speech {
-    margin-bottom: 1em;
+    margin-bottom: 1.08em;
   }
 
   .stage-direction.tight {
-    margin-top: -0.72em;
-    margin-bottom: 0.52em;
+    margin-bottom: 0.72em;
+  }
+
+  .speaker-line {
+    margin-bottom: 0.06em;
+  }
+
+  .spoken-line {
+    margin-bottom: 1.02em;
   }
 
   .signature {
